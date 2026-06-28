@@ -301,6 +301,103 @@ white-space:pre-wrap;
 
 }
 
+/* ===========================
+   Source Cards
+=========================== */
+
+.source-item{
+
+padding:15px;
+
+border:1px solid #E5E7EB;
+
+border-radius:10px;
+
+margin-bottom:12px;
+
+background:#FAFAFA;
+
+transition:0.2s;
+
+}
+
+.source-item:hover{
+
+background:#F3F4F6;
+
+}
+
+.source-name{
+
+font-size:15px;
+
+font-weight:600;
+
+color:#111827;
+
+}
+
+.source-page{
+
+margin-top:5px;
+
+font-size:13px;
+
+color:#6B7280;
+
+}
+
+/* ===========================
+   Metric Cards
+=========================== */
+
+.metric-card{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+border:1px solid #E5E7EB;
+
+text-align:center;
+
+box-shadow:0 2px 8px rgba(0,0,0,0.04);
+
+margin-top:10px;
+
+transition:0.25s;
+
+}
+
+.metric-card:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 16px rgba(0,0,0,0.08);
+
+}
+
+.metric-value{
+
+font-size:28px;
+
+font-weight:700;
+
+color:#2563EB;
+
+margin-bottom:6px;
+
+}
+
+.metric-title{
+
+font-size:14px;
+
+color:#6B7280;
+
+}
         </style>
         """,
         unsafe_allow_html=True,

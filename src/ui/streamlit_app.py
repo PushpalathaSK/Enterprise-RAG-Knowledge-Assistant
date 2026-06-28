@@ -1,7 +1,15 @@
 import streamlit as st
 
 from src.ui.styles import load_css
-from src.ui.components import page_header
+
+from src.ui.components import (
+    page_header,
+    search_panel,
+    answer_card,
+    source_card,
+    metric_cards,
+)
+
 
 def main():
 
@@ -12,38 +20,30 @@ def main():
 
     load_css()
 
-
     page_header()
+
+    # -------------------------
+    # Search Section
+    # -------------------------
+
+    question, search = search_panel()
+
+    # -------------------------
+    # Response + Sources
+    # -------------------------
 
     left, right = st.columns([2, 1])
 
     with left:
 
-        from src.ui.components import (
-    page_header,
-    search_panel,
-    answer_card,
-)
-        question, search = search_panel()
         answer_card("")
+
     with right:
 
-        st.markdown("### Supporting Documents")
+        source_card()
 
-        st.info("Retrieved documents will appear here.")
+    # -------------------------
+    # Metrics
+    # -------------------------
 
-        st.markdown("---")
-
-        st.markdown("### System Information")
-
-        st.info(
-            """
-Documents : 10
-
-Chunks : 10
-
-Embedding : MiniLM
-
-LLM : Gemini
-            """
-        )
+    metric_cards()
