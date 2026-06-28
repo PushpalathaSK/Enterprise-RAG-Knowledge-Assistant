@@ -1,33 +1,43 @@
+"""
+Enterprise RAG Knowledge Assistant
+----------------------------------
+Prompt Builder Module
+
+Creates structured prompts for the Gemini model.
+"""
+
+
 def build_prompt(question: str, documents):
     """
-    Build a structured prompt using
-    retrieved documents and the user's question.
+    Build a prompt using the retrieved documents.
     """
 
     context = "\n\n".join(
-        [doc.page_content for doc in documents]
+        doc.page_content
+        for doc in documents
     )
 
     prompt = f"""
 You are an Enterprise Knowledge Assistant.
 
-Use ONLY the information provided in the context.
+Instructions:
+- Answer ONLY using the provided context.
+- Do NOT make assumptions.
+- If the answer is unavailable, reply:
+  "I couldn't find this information in the uploaded documents."
+- Keep answers clear and concise.
+- Use bullet points when appropriate.
 
-If the answer is not available in the context, reply:
-
-"I couldn't find this information in the provided documents."
-
-Do not make up information.
-
---------------------------
-Context:
+Context
+-------
 {context}
---------------------------
 
-Question:
+Question
+--------
 {question}
 
-Answer:
+Answer
+------
 """
 
     return prompt
