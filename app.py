@@ -1,7 +1,4 @@
-from src.llm.llm import ask_gemini
+from src.ui.streamlit_app import main
 
-question = "Explain Retrieval Augmented Generation in 5 lines."
-
-answer = ask_gemini(question)
-
-print(answer)
+if __name__ == "__main__":
+    main()
