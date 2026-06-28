@@ -1,5 +1,5 @@
-from src.document_loader import load_all_documents
-from src.chunker import split_documents
+from src.loaders.document_loader import load_all_documents
+from src.processing.chunker import split_documents
 
 folder = "data/documents"
 

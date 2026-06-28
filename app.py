@@ -1,4 +1,4 @@
-from src.llm import ask_gemini
+from src.llm.llm import ask_gemini
 
 question = "Explain Retrieval Augmented Generation in 5 lines."
 

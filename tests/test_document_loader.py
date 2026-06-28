@@ -1,4 +1,4 @@
-from src.document_loader import load_all_documents
+from src.loaders.document_loader import load_all_documents
 
 folder = "data/documents"
 
